@@ -3,7 +3,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var swig = require('swig');
 
-// A simple server to expose **two APIs**, one for quoation management
+// A simple server to expose **two APIs**, one for quotation management
 // and another for getting logs.
 
 // This is the collection of logs.
@@ -42,7 +42,7 @@ var quotations = [
   return quotation;
 });
 
-// REST APIs for quoation and log managements. The service worker approach allow
+// REST APIs for quotation and log managements. The service worker approach allow
 // us to log each request without touching the API implementation.
 module.exports = function(app, route) {
   var report = swig.compileFile(path.join(__dirname, './report.html'));

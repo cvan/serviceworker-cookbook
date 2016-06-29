@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var sessions = {};
 
 // The default quotations. `makeDefaults()` simply add the id and the
-// sticky flag to make them non removables.
+// sticky flag to make them non-removables.
 var defaultQuotations = makeDefaults([
   {
     text: 'Humanity is smart. Sometime in the technology world we think we ' +
@@ -35,7 +35,7 @@ var defaultQuotations = makeDefaults([
   }
 ]);
 
-// REST APIs for quoation and log managements. The service worker approach allow
+// REST APIs for quotation and log managements. The service worker approach allows
 // us to log each request without touching the API implementation.
 module.exports = function(app, route) {
   // Allow express to parse the body of the requests.
@@ -80,7 +80,7 @@ function makeDefaults(quotationList) {
   return quotationList;
 }
 
-// Get the quotation collection for a session
+// Get the quotation collection for a session.
 function getQuotationsForSession(session) {
   if (!(session in sessions)) {
     sessions[session] = JSON.parse(JSON.stringify(defaultQuotations));
